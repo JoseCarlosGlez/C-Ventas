@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="barberiabarbarosModelStoreContainer" CdmEntityContainer="barberiabarbarosEntities">
+    <EntitySetMapping Name="catalogo">
+      <EntityTypeMapping TypeName="barberiabarbarosModel.catalogo">
+        <MappingFragment StoreEntitySet="catalogo">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cita">
+      <EntityTypeMapping TypeName="barberiabarbarosModel.cita">
+        <MappingFragment StoreEntitySet="cita">
+          <ScalarProperty Name="IdCita" ColumnName="IdCita" />
+          <ScalarProperty Name="HoraCita" ColumnName="HoraCita" />
+          <ScalarProperty Name="DiaCita" ColumnName="DiaCita" />
+          <ScalarProperty Name="HoraRegistro" ColumnName="HoraRegistro" />
+          <ScalarProperty Name="DiaRegistro" ColumnName="DiaRegistro" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Cliente_IdCiente" ColumnName="Cliente_IdCiente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cliente">
+      <EntityTypeMapping TypeName="barberiabarbarosModel.cliente">
+        <MappingFragment StoreEntitySet="cliente">
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="RfcCliente" ColumnName="RfcCliente" />
+          <ScalarProperty Name="NombreCliente" ColumnName="NombreCliente" />
+          <ScalarProperty Name="TelCliente" ColumnName="TelCliente" />
+          <ScalarProperty Name="CorreoCliente" ColumnName="CorreoCliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="venta">
+      <EntityTypeMapping TypeName="barberiabarbarosModel.venta">
+        <MappingFragment StoreEntitySet="venta">
+          <ScalarProperty Name="Folio" ColumnName="Folio" />
+          <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+          <ScalarProperty Name="FechaVenta" ColumnName="FechaVenta" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="Impuestos" ColumnName="Impuestos" />
+          <ScalarProperty Name="Cita_IdCita" ColumnName="Cita_IdCita" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="catalogo_has_venta" TypeName="barberiabarbarosModel.catalogo_has_venta" StoreEntitySet="catalogo_has_venta">
+      <EndProperty Name="catalogo">
+        <ScalarProperty Name="Codigo" ColumnName="Catalogo_Codigo" />
+      </EndProperty>
+      <EndProperty Name="venta">
+        <ScalarProperty Name="Folio" ColumnName="Venta_Folio" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
